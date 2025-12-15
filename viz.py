@@ -1,6 +1,15 @@
 import numpy as np
 from math import sqrt
 
+def get_stats(s):
+    arr = np.array(s.dropna(), dtype=float)
+    return {
+        'mean': np.mean(arr),
+        'median': np.median(arr),
+        'min': np.min(arr),
+        'max': np.max(arr)
+    }
+
 class HealthAnalyzer:
     def __init__(self, df):
         self.df = df
